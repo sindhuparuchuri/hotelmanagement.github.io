@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Information</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hotel Information</h1>
+    <table>
+        <tr>
+            <th>Hotel ID</th>
+            <th>Hotel Name</th>
+            <th>Street Name</th>
+            <th>Zip Code</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Email Address</th>
+            <th>Description</th>
+            <th>Contact Information</th>
+        </tr>
+        <% data.forEach(hotel => { %>
+            <tr>
+                <td><%= hotel.HotelID %></td>
+                <td><%= hotel.HotelName %></td>
+                <td><%= hotel.StreetName %></td>
+                <td><%= hotel.ZipCode %></td>
+                <td><%= hotel.State %></td>
+                <td><%= hotel.Country %></td>
+                <td><%= hotel.EmailAddress %></td>
+                <td><%= hotel.Description %></td>
+                <td><%= hotel.ContactInformation %></td>
+            </tr>
+        <% }) %>
+    </table>
+    <p><a href="http://localhost:8080/">|Go home|</a></p>
+</body>
+
+</html>
