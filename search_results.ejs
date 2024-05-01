@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Search</title>
+    <link rel="stylesheet" href="/search_results.css"> 
+</head>
+<h2>Search Results for <%= city %>, <%= state %></h2>
+<table>
+    <thead>
+        <tr>
+            <th>Hotel Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Description</th>
+            <th>Contact</th>
+            <th>Service</th>
+            <th>Service Description</th>
+            <th>Service Price</th>
+            <th>Room Type</th>
+            <th>Room Description</th>
+            <th>Capacity</th>
+            <th>Room Price</th>
+            <th>Room Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% hotels.forEach(hotel => { %>
+            <tr>
+                <td><%= hotel.HotelName %></td>
+                <td><%= hotel.StreetName %>, <%= hotel.City %>, <%= hotel.State %>, <%= hotel.Country %>, <%= hotel.ZipCode %></td>
+                <td><%= hotel.EmailAddress %></td>
+                <td><%= hotel.Description %></td>
+                <td><%= hotel.ContactInformation %></td>
+                <td><%= hotel.ServiceName ? hotel.ServiceName : '-' %></td>
+                <td><%= hotel.ServiceDescription ? hotel.ServiceDescription : '-' %></td>
+                <td><%= hotel.ServicePrice ? hotel.ServicePrice : '-' %></td>
+                <td><%= hotel.RoomType ? hotel.RoomType : '-' %></td>
+                <td><%= hotel.RoomDescription ? hotel.RoomDescription : '-' %></td>
+                <td><%= hotel.Capacity ? hotel.Capacity : '-' %></td>
+                <td><%= hotel.RoomPrice ? hotel.RoomPrice : '-' %></td>
+                <td><%= hotel.RoomNumber ? hotel.RoomNumber : '-' %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+<p>
+    <a href="http://localhost:8080.login.html/ ">|Go home|</a></p>

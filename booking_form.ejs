@@ -1,0 +1,99 @@
+<!-- Hotel Booking Form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Form</title>
+    <link rel="stylesheet" href="/booking.css"> <!-- Assuming you have a CSS file named "styles.css" in your "public" directory -->
+</head>
+<body>
+    <h1>Hotel Booking Form</h1>
+    <form action="/booking" method="POST" id="bookingForm">
+        <label for="guestID">Guest ID:</label>
+        <input type="number" id="guestID" name="guestID" required><br>
+
+        <!-- Display available hotel options -->
+        <label for="hotelID">Hotel Name:</label>
+        <select id="hotelID" name="hotelID" required>
+            <% hotels.forEach(hotel => { %>
+                <option value="<%= hotel.HotelID %>"><%= hotel.HotelName %></option>
+            <% }); %>
+        </select><br>
+
+        <!-- Display available room numbers based on the selected hotel -->
+        <label for="roomNumber">Room Number:</label>
+        <select id="roomNumber" name="roomNumber" required>
+            <!-- Room numbers will be dynamically populated here -->
+        </select><br>
+
+        <label for="checkInDate">Check-in Date:</label>
+        <input type="date" id="checkInDate" name="checkInDate" required><br>
+
+        <label for="checkOutDate">Check-out Date:</label>
+        <input type="date" id="checkOutDate" name="checkOutDate" required><br>
+
+        <label for="totalPrice">Total Price:</label>
+        <input type="number" id="totalPrice" name="totalPrice" required disabled><br> <!-- Disabled initially -->
+
+        <label for="paymentType">Payment Type:</label>
+        <input type="text" id="paymentType" name="paymentType" required><br>
+
+        <label for="stayDuration">Stay Duration:</label>
+        <input type="number" id="stayDuration" name="stayDuration" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/guest" method="GET">
+        <button type="submit">Back to Guest Information Form</button>
+    </form>
+
+    <script>
+        // Function to fetch room numbers based on selected hotel
+        function fetchRoomNumbers() {
+            const hotelID = document.getElementById('hotelID').value;
+
+            fetch(`/rooms?hotelID=${hotelID}`)
+                .then(response => response.json())
+                .then(data => {
+                    const roomNumberSelect = document.getElementById('roomNumber');
+                    roomNumberSelect.innerHTML = ''; // Clear previous options
+
+                    data.roomNumbers.forEach(roomNumber => {
+                        const option = document.createElement('option');
+                        option.value = roomNumber;
+                        option.textContent = roomNumber;
+                        roomNumberSelect.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching room numbers:', error);
+                });
+        }
+
+        // Event listener for hotel selection change
+        document.getElementById('hotelID').addEventListener('change', fetchRoomNumbers);
+
+        // Fetch room numbers initially when the page loads
+        fetchRoomNumbers();
+    </script>
+    <script>
+        // Function to fetch total price
+        function fetchTotalPrice() {
+            const hotelID = document.getElementById('hotelID').value; // Corrected ID here
+            const roomNumber = document.getElementById('roomNumber').value;
+            fetch(`/totalPrice?hotelID=${hotelID}&roomNumber=${roomNumber}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('totalPrice').value = data.totalPrice; // Updated to set value instead of textContent
+                })
+                .catch(error => console.error('Error fetching total price:', error));
+        }
+    
+        // Event listeners for hotel and room number change
+        document.getElementById('hotelID').addEventListener('change', fetchTotalPrice); // Corrected ID here
+        document.getElementById('roomNumber').addEventListener('change', fetchTotalPrice);
+    </script>
+    <a href="/login.html">Home</a>
+</body>
+</html>

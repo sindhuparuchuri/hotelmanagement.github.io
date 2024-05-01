@@ -1,0 +1,36 @@
+<!-- employeeDetails.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="/employee.css">
+</head>
+<body>
+    <h1>Employee Details</h1>
+
+    <h2>Update Employee Department</h2>
+    <form action="/updateEmployee" method="POST">
+        <input type="hidden" name="action" value="updateDepartment">
+        <label for="employeeID">Employee ID:</label>
+        <input type="number" id="employeeID" name="employeeID" required>
+        <label for="newDepartment">New Department:</label>
+        <input type="text" id="newDepartment" name="newDepartment" required>
+        <button type="submit">Update Department</button>
+    </form>
+
+    <h2>Update Employee Salary</h2>
+    <form action="/updateEmployee" method="POST">
+        <input type="hidden" name="action" value="updateSalary">
+        <label for="employeeID">Employee ID:</label>
+        <input type="number" id="employeeID" name="employeeID" required>
+        <label for="newSalary">New Salary:</label>
+        <input type="number" id="newSalary" name="newSalary" required>
+        <button type="submit">Update Salary</button>
+    </form>
+
+    <a href="http://localhost:8080/managerlogin.html">Home</a>
+</body>
+</html>

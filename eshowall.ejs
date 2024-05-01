@@ -1,0 +1,47 @@
+<!-- eshowAll.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Hotel Management System</title>
+    <link rel="stylesheet" href="search_results.css">
+</head>
+<body>
+    <h1>Show All Hotels, Employees, and Departments</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Hotel Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Position</th>
+                <th>Contact Information</th>
+                <th>Email Address</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% employees.forEach(employee => { %>
+                <tr>
+                    <td><%= employee.HotelName %></td>
+                    <td><%= employee.FirstName %></td>
+                    <td><%= employee.LastName %></td>
+                    <td><%= employee.Position %></td>
+                    <td><%= employee.ContactInformation %></td>
+                    <td><%= employee.EmailAddress %></td>
+                    <td>$<%= employee.EmployeeSalary %></td>
+                    <td><%= employee.DepartmentName %></td>
+                    <td><%= employee.Description %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+    <a href="http://localhost:8080/managerlogin.html">Home</a>
+</body>
+</html>

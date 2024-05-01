@@ -1,0 +1,47 @@
+<!-- addHotel.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Hotel</title>
+    <link rel="stylesheet" href="/search.css">
+</head>
+<body>
+    <h1>Add Hotel</h1>
+
+    <form action="/addHotel" method="POST">
+        <label for="hotelName">Hotel Name:</label>
+        <input type="text" id="hotelName" name="hotelName" required><br>
+
+        <label for="streetName">Street Name:</label>
+        <input type="text" id="streetName" name="streetName" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required><br>
+
+        <label for="emailAddress">Email Address:</label>
+        <input type="email" id="emailAddress" name="emailAddress" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+        <label for="contactInformation">Contact Information:</label>
+        <input type="text" id="contactInformation" name="contactInformation" required><br>
+
+        <button type="submit">Add Hotel</button>
+    </form>
+
+    <a href="http://localhost:8080/managerlogin.html">Home</a>
+</body>
+</html>

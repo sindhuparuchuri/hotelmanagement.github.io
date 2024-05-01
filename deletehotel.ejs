@@ -1,0 +1,24 @@
+<!-- deleteHotel.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Hotel</title>
+    <link rel="stylesheet" href="/deletehotel.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Delete Hotel</h1>
+    <form action="/deleteHotel" method="POST">
+        <label for="hotelName">Select Hotel Name:</label>
+        <select id="hotelName" name="hotelName" required>
+            <% hotels.forEach(hotel => { %>
+                <option value="<%= hotel.HotelName %>"><%= hotel.HotelName %></option>
+            <% }); %>
+        </select>
+        <button type="submit">Delete Hotel</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>

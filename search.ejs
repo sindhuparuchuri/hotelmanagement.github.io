@@ -1,20 +1,23 @@
+<!-- search.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotel Search</title>
+    <link rel="stylesheet" href="/search.css"> 
 </head>
-
 <body>
-    <form action="/search" method="post">
-        <label for="id">ID:</label>
-        <input type="number" name="id" value="id" placeholder="Enter Hotel Id">
-        <input type="submit" value="Submit">
+    <h1>Hotel Search</h1>
+    <form action="/search" method="POST">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+        <button type="submit">Search</button>
     </form>
     <p>
-        <a href="http://localhost:8080/ ">|Go home|</a></p>
+        <a href="http://localhost:8080/login.html">|Go home|</a></p>
 </body>
-
 </html>

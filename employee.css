@@ -1,0 +1,70 @@
+/* search.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; /* Center the container horizontally with some top margin */
+    padding: 20px;
+    background-color: #ffffff; /* White container background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Add some bottom margin */
+}
+
+h2 {
+    margin-top: 30px; /* Add some top margin between sections */
+}
+
+form {
+    margin-bottom: 30px; /* Add some bottom margin to forms */
+}
+
+label {
+    display: block; /* Make labels block-level */
+    margin-bottom: 10px; /* Add some bottom margin to labels */
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%; /* Make input fields full-width */
+    padding: 10px; /* Add some padding */
+    margin-bottom: 15px; /* Add some bottom margin */
+    border-radius: 5px; /* Add some border radius */
+    border: 1px solid #ccc; /* Add a border */
+}
+
+button[type="submit"] {
+    width: 100%; /* Make the button full-width */
+    padding: 10px; /* Add some padding */
+    background-color: #007bff; /* Blue button background color */
+    color: #ffffff; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add some border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+a {
+    display: block; /* Make links block-level */
+    text-align: center; /* Center the links */
+    margin-top: 20px; /* Add some top margin */
+    color: #007bff; /* Blue link color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

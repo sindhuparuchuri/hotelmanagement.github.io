@@ -1,0 +1,30 @@
+<!-- Guest Information Form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Information Form</title>
+    <link rel="stylesheet" href="/guest.css"> 
+</head>
+<body>
+    <h1>Guest Information Form</h1>
+    <form action="/guest" method="POST">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+
+        <label for="contactInfo">Contact Information:</label>
+        <input type="text" id="contactInfo" name="contactInfo" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/booking">Go to Booking Form</a><br> 
+    <a href="/login.html">Home</a>
+</body>
+</html>

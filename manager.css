@@ -1,0 +1,56 @@
+/* myDesign.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; /* Center the container horizontally with some top margin */
+    padding: 20px;
+    background-color: #ffffff; /* White container background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header {
+    background-color: #007bff; /* Blue header background */
+    color: #ffffff; /* White header text */
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center; /* Center the text */
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    margin-bottom: 10px; /* Add some space between navigation items */
+}
+
+.navigation ul li a {
+    color: #343a40; /* Dark text color for navigation links */
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* Make the links block-level for better spacing */
+    padding: 10px; /* Add padding for better clickability */
+    border-radius: 5px; /* Add some border-radius for rounded corners */
+}
+
+.navigation ul li a:hover {
+    background-color: #007bff; /* Hover background color */
+    color: #ffffff; /* White text color on hover */
+}
+
+.logout-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
